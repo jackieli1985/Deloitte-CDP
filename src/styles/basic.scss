@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+iframe,
+map,
+font,
+img,
+a img,
+samp,
+strong,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+p,
+blockquote,
+a,
+address,
+code,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+label,
+table,
+tr,
+td,
+th {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-weight: normal;
+  font-family: Arial, "微软雅黑", "SF Pro SC", "HanHei SC", "SF Pro Text",
+    "Myriad Set Pro", "SF Pro Icons", "PingFang SC", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #fff;
+}
+
+p {
+  margin: 0 !important;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+dl {
+}
+
+input {
+  background: none;
+  outline: none;
+  border: 0px;
+  width: 100%;
+  /* height: 100%; */
+  padding: 0.75rem 0.35rem;
+  border-radius: 0.15rem;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #cccccc;
+}
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-size: 12px;
+  color: #cccccc;
+}
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-size: 12px;
+  color: #cccccc;
+}
+input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-size: 12px;
+  color: #cccccc;
+}
+/* ie11显示显示加载不同的样式 */
+/* IE10-specific styles go here */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  input::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-size: 14px;
+  }
+  input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-size: 14px;
+  }
+  input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-size: 14px;
+  }
+  input::-ms-clear {
+    display: none;
+  }
+  input::-ms-reveal {
+    display: none;
+  }
+}
+
+textarea {
+  background: none;
+  outline: none;
+  border: 0px;
+  width: 100%;
+  padding: 0.75rem 0.35rem;
+  border-radius: 0.15rem;
+}

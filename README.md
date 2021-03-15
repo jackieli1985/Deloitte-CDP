@@ -1,12 +1,11 @@
 <h1 align="center"><b>Deloitte CDP</b></h1>
-<h4 align="center">Single Source of Truth</h4>
 <p align="center"><img src="https://github.com/jackieli1985/Deloitte-CDP/blob/dd54301d6d30a8f33038631aab13f75ce247e7e1/logo2.png"></a></p> 
 <h4 align="center">以事实和数据洞察驱动快速高效的业务决策</h4>
 
 
 # What is Deloitte CDP?
-<h5>Deloitte CDP is a customer data management platform which is developed for corporate clients. Through customer data's access and unified management, it builds a rounded system from attributes and tags to behaviours, supports customer profile analysis, campaign serving management and other application scenarios, and improves data-driven and fact-driven customer experience.</h5><br>
-<h5>Deloitte CDP 是针对企业客户研发的客户数据管理平台。通过客户数据的接入和统一管理，构建从属性、标签到行为的完整体系，支持客户画像分析与活动推送管理等应用场景，实现数据和事实驱动的客户体验提升。</h5>
+<p>Deloitte CDP is a customer data management platform which is developed for corporate clients. Through customer data's access and unified management, it builds a rounded system from attributes and tags to behaviours, supports customer profile analysis, campaign serving management and other application scenarios, and improves data-driven and fact-driven customer experience.</p>
+<p>Deloitte CDP 是针对企业客户研发的客户数据管理平台。通过客户数据的接入和统一管理，构建从属性、标签到行为的完整体系，支持客户画像分析与活动推送管理等应用场景，实现数据和事实驱动的客户体验提升。</p>
 
 # Key Features
 <p>Flexible Data Ingestion across multiple sources 跨多源的灵活数据摄取</p>
@@ -19,15 +18,11 @@
 <p>Automated inspection alert and restoration自动检查警报和恢复</p>
 <p>User authority management 用户权限管理</p>
 
+# Why Deloitte CDP?
 
 # Deployment
-<p>1.	Sign up to Heroku and log in to your account</p>
-<p>2.	Click the button below and follow the instructions</p>
-<p>1.	注册Heroku并登录您的账户</p>
-<p>2.	点击下方的按钮并按照说明进行操作</p>
-
 <a href="https://heroku.com/deploy?template=https://github.com/jackieli1985/Deloitte-CDP">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 
-# Settings & Environment
+

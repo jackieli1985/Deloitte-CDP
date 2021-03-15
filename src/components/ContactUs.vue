@@ -2,7 +2,7 @@
   <div class="hdp-uf contact-us" id="ContactUs">
     <el-dialog
       title=""
-      :width="screenWidth > 768 ? '500px' : '350px'"
+      :width="screenWidth > 960 ? '500px' : '350px'"
       v-loading="isLoading"
       :visible.sync="dialogVisible"
       :close-on-click-modal="false"
@@ -119,7 +119,7 @@
 </template>
 
 <script>
-import contactApi from "@/api/contact.js";
+import contactApi from "@/api/contact";
 export default {
   name: "ContactUs",
   props: [], // 调用组件传递过来的相关参数
@@ -228,10 +228,5 @@ export default {
       color: rgba(61, 110, 251, 1);
     }
   }
-}
-
-@media only screen and (max-width: 1044px) {
-}
-@media only screen and (max-width: 768px) {
 }
 </style>

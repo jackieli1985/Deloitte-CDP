@@ -20,6 +20,11 @@
 
 
 # Deployment
+<p>1.	Sign up to Heroku and log in to your account</p>
+<p>2.	Click the button below and follow the instructions</p>
+<p>1.	注册Heroku并登录您的账户</p>
+<p>2.	点击下方的按钮并按照说明进行操作</p>
+
 <a href="https://heroku.com/deploy?template=https://github.com/jackieli1985/Deloitte-CDP">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>

@@ -6,6 +6,12 @@ const productionGzipExtensions = ["js", "css"];
 // const productionGzipExtensions = /\.(js|css|json|ttf)(\?.*)?$/i;
 
 module.exports = {
+  chainWebpack: config => {
+    config.plugin("html").tap(args => {
+      args[0].title = "Deloitte CDP";
+      return args;
+    });
+  },
   productionSourceMap: false,
   configureWebpack: {
     plugins: [

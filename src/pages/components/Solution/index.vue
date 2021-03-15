@@ -1,11 +1,15 @@
 <template>
   <div class="hdp-uf hdp-uf-hc hdp-w-100 solution" id="solution">
     <div class="hdp-uf hdp-uf-vc hdp-uf-dc hdp-w-100 section-container">
-      <div class="section-tittle">定制全链路行业解决方案</div>
-      <div class="section-summary">
+      <div class="section-tittle wow animate__animated animate__fadeInUp">
+        定制全链路行业解决方案
+      </div>
+      <div class="section-summary wow animate__animated animate__fadeInUp">
         赋能不同行业客户，实现针对性需求解决方案
       </div>
-      <div class="hdp-uf hdp-uf-vc hdp-uf-dc tabs-content">
+      <div
+        class="hdp-uf hdp-uf-vc hdp-uf-dc tabs-content wow animate__animated animate__fadeInUp"
+      >
         <div class="hdp-uf tabs-list">
           <div
             v-for="(item, index) in solutionData"
@@ -18,7 +22,7 @@
               :class="activeTab === item.tabName ? 'tab-icon-text-on' : ''"
             >
               <div
-                class="tab-title"
+                class="hdp-uf hdp-uf-vc tab-title"
                 :class="activeTab === item.tabName ? 'tab-title-on' : ''"
               >
                 {{ item.title }}
@@ -32,8 +36,8 @@
               :interval="6000"
               :autoplay="isAutoplay"
               arrow="always"
-              type="card"
-              height="300px"
+              :type="screenWidth > 1044 ? 'card' : ''"
+              :height="screenWidth > 1044 ? '320px' : '600px'"
               ref="solutionCards"
               @change="handleCardChange"
             >
@@ -41,9 +45,12 @@
                 v-for="(item, index) in solutionData"
                 :key="`solution_${index}`"
               >
-                <div class="hdp-uf hdp-uf-hc hdo-uf-vc card-content">
-                  <div class="hdp-uf card-left">
-                    <img class="item-image" :src="item.contentImage" alt="" />
+                <div class="hdp-uf card-content">
+                  <div
+                    class="hdp-uf card-left"
+                    :class="screenWidth < 1044 ? 'hdp-uf-hc' : ''"
+                  >
+                    <img class="item-image" v-lazy="item.contentImage" alt="" />
                   </div>
                   <div class="hdp-uf hdp-uf-dc card-right">
                     <div class="hdp-uf hdp-uf-dc card-summary">
@@ -60,7 +67,7 @@
                         </ul>
                       </div>
                       <div class="hdp-uf hdp-uf-hfe card-actions">
-                        <el-button type="primary"
+                        <el-button type="primary" @click="openContactUs"
                           >了解详情<i
                             class="el-icon-arrow-right el-icon--right"
                           ></i
@@ -98,6 +105,7 @@ export default {
       activeTab: "",
       currentTabData: {},
       isAutoplay: true,
+      screenWidth: document.body.clientWidth,
       solutionData: [
         {
           tabName: "automobile",
@@ -180,6 +188,13 @@ export default {
   methods: {
     init() {
       console.log("Solution 组件渲染完成");
+      const that = this;
+      window.onresize = () => {
+        return (() => {
+          window.screenWidth = document.body.clientWidth;
+          that.screenWidth = window.screenWidth;
+        })();
+      };
       // 初始化数据和选中项
       this.changeTab("automobile", 0);
     },
@@ -201,6 +216,9 @@ export default {
         this.currentTabData = this.solutionData[value];
         this.activeTab = this.currentTabData.tabName;
       }
+    },
+    openContactUs() {
+      this.$emit("openContactUs", "");
     }
   }
 };
@@ -250,6 +268,25 @@ export default {
   .el-carousel__item
   .el-carousel__mask {
   opacity: 0.4;
+}
+@media only screen and (max-width: 1044px) {
+}
+
+@media only screen and (max-width: 768px) {
+  .solution
+    .tab-item-content
+    .el-carousel
+    .el-carousel__container
+    .el-carousel__arrow.el-carousel__arrow--left {
+    left: 5%;
+  }
+  .solution
+    .tab-item-content
+    .el-carousel
+    .el-carousel__container
+    .el-carousel__arrow.el-carousel__arrow--right {
+    right: 5%;
+  }
 }
 </style>
 
@@ -311,26 +348,29 @@ export default {
         }
 
         .card-content {
+          height: 100%;
           .card-left {
             width: 50%;
+            height: 100%;
             .item-image {
-              width: 100%;
-              height: auto;
+              width: auto;
+              height: 100%;
+              overflow-x: hidden;
             }
           }
           .card-right {
             width: 50%;
-            padding: 30px;
+            padding: 20px 30px;
             color: #ffffff;
             .card-summary {
               border-bottom: 1px solid rgba(255, 255, 255, 0.17);
-              padding-bottom: 20px;
+              padding-bottom: 10px;
               .item-right-title {
                 font-size: 16px;
                 font-weight: 500;
               }
               .item-right-list {
-                margin-top: 10px;
+                margin-top: 8px;
                 .list-item {
                   position: relative;
                   color: #afb7dc;
@@ -349,7 +389,7 @@ export default {
                 }
               }
               .card-actions {
-                margin-top: 30px;
+                margin-top: 20px;
               }
             }
             .card-footer {
@@ -368,6 +408,62 @@ export default {
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1044px) {
+  .solution {
+    .section-container {
+      width: 100%;
+      padding: 2rem 0;
+    }
+  }
+
+  .solution .section-container .section-tittle {
+    font-size: 18px;
+  }
+
+  .solution .section-container .tabs-content {
+    margin-top: 1rem;
+  }
+
+  .solution .section-container .tabs-content .tabs-list {
+    width: 100%;
+  }
+
+  .solution
+    .section-container
+    .tabs-content
+    .tabs-list
+    .tab-item
+    .tab-icon-text
+    .tab-title {
+    font-size: 12px;
+  }
+
+  .solution .section-container .tabs-content .tab-item-content .card-content {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  .solution
+    .section-container
+    .tabs-content
+    .tab-item-content
+    .card-content
+    .card-left {
+    width: 100%;
+    height: auto;
+  }
+  .solution
+    .section-container
+    .tabs-content
+    .tab-item-content
+    .card-content
+    .card-right {
+    width: 100%;
   }
 }
 </style>

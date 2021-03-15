@@ -11,10 +11,10 @@
         <ProductValue />
 
         <!-- section-core -->
-        <SectionCore />
+        <SectionCore @openContactUs="openContactUs" />
 
         <!-- Solution -->
-        <Solution />
+        <Solution @openContactUs="openContactUs" />
 
         <!-- Advantages -->
         <Advantages />
@@ -124,7 +124,7 @@ a {
 @media only screen and (max-width: 1044px) {
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .banner-content {
     top: 12%;
   }

@@ -40,4 +40,16 @@ export default {
     font-size: 12px;
   }
 }
+
+@media only screen and (max-width: 1044px) {
+}
+
+@media only screen and (max-width: 768px) {
+  .CDPFooter {
+    height: 80px;
+  }
+  .CDPFooter .content {
+    width: 80%;
+  }
+}
 </style>

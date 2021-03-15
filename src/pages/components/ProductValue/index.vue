@@ -1,8 +1,8 @@
 <template>
   <div class="hdp-uf hdp-uf-hc hdp-w-100 product-value" id="productValue">
-    <div class="hdp-uf hdp-w-70 section-container">
+    <div class="hdp-uf section-container">
       <div class="hdp-uf hdp-uf-vc hdp-uf-dc tabs-content">
-        <div class="hdp-uf tabs-list">
+        <div class="hdp-uf tabs-list wow animate__animated animate__fadeInUp">
           <div
             v-for="(item, index) in valuesData"
             :key="`value_${index}`"
@@ -13,13 +13,13 @@
               class="hdp-uf hdp-uf-vc hdp-uf-dc tab-icon-text"
               :class="activeTab === item.tabName ? 'tab-icon-text-on' : ''"
             >
-              <div class="hdp-uf">
+              <p>
                 <img
                   class="item-image"
                   :src="activeTab === item.tabName ? item.iconOn : item.icon"
                   alt=""
                 />
-              </div>
+              </p>
               <div
                 class="tab-title"
                 :class="activeTab === item.tabName ? 'tab-title-on' : ''"
@@ -33,9 +33,11 @@
           v-if="currentTabData && Object.keys(currentTabData).length > 0"
           class="hdp-uf hdp-uf tab-item-content"
         >
-          <div class="hdp-uf hdp-uf-hsb hdp-w-100">
-            <div class="hdp-uf hdp-uf-dc content-left">
-              <p class="content-tit">数据源管理</p>
+          <div class="hdp-uf hdp-uf-hsb hdp-w-100 current-content">
+            <div
+              class="hdp-uf hdp-uf-dc content-left wow animate__animated animate__fadeInUp"
+            >
+              <p class="content-tit">{{ currentTabData.title }}</p>
               <div class="hdp-uf hdp-uf-dc content-list">
                 <div
                   v-for="(item, index) in currentTabData.content"
@@ -58,11 +60,13 @@
                 </div>
               </div>
             </div>
-            <div class="hdp-uf content-right">
+            <div
+              class="hdp-uf content-right wow animate__animated animate__fadeInUp"
+            >
               <p>
                 <img
                   class="content-image"
-                  :src="currentTabData.contentImage"
+                  v-lazy="currentTabData.contentImage"
                   alt="data-source-content"
                 />
               </p>
@@ -199,9 +203,9 @@ export default {
 <style scoped lang="scss">
 .product-value {
   background: #ffffff;
-  margin-top: -5px;
-
+  // margin-top: -5px;
   .section-container {
+    width: 70%;
     padding-top: 2rem;
     .tabs-content {
       width: 100%;
@@ -271,6 +275,98 @@ export default {
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1044px) {
+  .product-value {
+    .section-container {
+      width: 90%;
+      padding-top: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .product-value {
+    .section-container {
+      width: 100%;
+      padding-top: 1rem;
+    }
+  }
+
+  .product-value .section-container .tabs-content .tabs-list .tab-item {
+    height: 55px;
+  }
+
+  .product-value
+    .section-container
+    .tabs-content
+    .tabs-list
+    .tab-item
+    .tab-icon-text
+    .item-image {
+    width: 15px;
+    height: auto;
+  }
+
+  .product-value
+    .section-container
+    .tabs-content
+    .tabs-list
+    .tab-item
+    .tab-icon-text
+    .tab-title {
+    font-size: 12px;
+  }
+
+  .product-value
+    .section-container
+    .tabs-content
+    .tabs-list
+    .tab-item
+    .tab-icon-text {
+    padding: 0 10px;
+  }
+
+  .current-content {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .product-value .section-container .tabs-content .tab-item-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .product-value
+    .section-container
+    .tabs-content
+    .tab-item-content
+    .content-left {
+    width: 100%;
+  }
+
+  .product-value
+    .section-container
+    .tabs-content
+    .tab-item-content
+    .content-left
+    .content-tit {
+    font-size: 18px;
+  }
+
+  .product-value
+    .section-container
+    .tabs-content
+    .tab-item-content
+    .content-right {
+    text-align: center;
+    padding-top: 20px;
+    width: 90%;
   }
 }
 </style>

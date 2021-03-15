@@ -1,22 +1,25 @@
 <template>
   <div class="hdp-uf hdp-uf-hc hdp-w-100 section-advantages" id="advantages">
     <div class="hdp-uf hdp-uf-vc hdp-uf-dc hdp-w-70 section-container">
-      <div class="section-tittle">为什么选择德勤CDP</div>
+      <div class="section-tittle wow animate__animated animate__fadeInUp">
+        为什么选择德勤CDP
+      </div>
       <div class="hdp-uf hdp-uf-hc hdp-uf-hsb hdp-w-100 section-content">
         <!-- advantages left list -->
         <div class="hdp-uf hdp-uf-dc hdp-w-30 content-list">
           <div
             v-for="(item, index) in advantagesData.leftData"
             :key="`advantages_${index}`"
-            class="hdp-uf hdp-uf-dc hdp-w-100 content-item"
+            class="hdp-uf hdp-uf-dc hdp-w-100 content-item wow animate__animated animate__fadeInUp"
+            :data-wow-duration="`${index}s`"
           >
-            <div class="hdp-uf">
+            <p>
               <img
                 class="item-image"
                 :src="item.icon"
                 alt="advantages-icon-01"
               />
-            </div>
+            </p>
             <div class="hdp-uf hdp-uf-dc">
               <div class="item-tit">{{ item.title }}</div>
               <div class="hdp-uf item-text">
@@ -26,11 +29,11 @@
           </div>
         </div>
         <!-- advantages image -->
-        <div class="hdp-uf hdp-uf-vc hdp-uf-hc hdp-w-40">
+        <div class="hdp-uf hdp-uf-vc hdp-uf-hc hdp-w-40 content-image">
           <div class="hdp-uf hdp-uf-hc">
             <img
               class="advantages-image"
-              src="@/assets/image/advantages.png"
+              v-lazy="lazyImages.advantagesUrl"
               alt="advantages"
             />
           </div>
@@ -40,15 +43,16 @@
           <div
             v-for="(item, index) in advantagesData.rightData"
             :key="`advantages_${index}`"
-            class="hdp-uf hdp-uf-dc hdp-w-100 content-item"
+            class="hdp-uf hdp-uf-dc hdp-w-100 content-item wow animate__animated animate__fadeInUp"
+            :data-wow-duration="`${index}s`"
           >
-            <div class="hdp-uf">
+            <p>
               <img
                 class="item-image"
                 :src="item.icon"
                 alt="advantages-icon-01"
               />
-            </div>
+            </p>
             <div class="hdp-uf hdp-uf-dc">
               <div class="item-tit">{{ item.title }}</div>
               <div class="hdp-uf item-text">
@@ -67,6 +71,9 @@ export default {
   name: "Advantages",
   data() {
     return {
+      lazyImages: {
+        advantagesUrl: require("@/assets/image/advantages.png")
+      },
       advantagesData: {
         leftData: [
           {
@@ -136,14 +143,14 @@ export default {
       margin: 3rem 0;
 
       .advantages-image {
-        width: 80%;
+        width: 90%;
         height: auto;
       }
 
       .content-item {
         background: #ffffff;
-        height: 150px;
-        padding: 20px 28px;
+        height: 180px;
+        padding: 20px;
 
         .item-image {
           width: 42px;
@@ -161,6 +168,42 @@ export default {
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .section-advantages {
+    .section-container {
+      width: 100%;
+      padding: 2rem 0;
+    }
+  }
+
+  .section-advantages .section-container .section-tittle {
+    font-size: 18px;
+  }
+
+  .section-advantages .section-container .section-content {
+    margin: 2rem 0;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .section-advantages .section-container .section-content .content-list {
+    width: 100%;
+  }
+
+  .section-advantages .section-container .section-content .content-item {
+    padding: 10px 20px;
+    height: 0;
+    min-height: 150px;
+  }
+
+  .section-advantages .section-container .section-content .content-image {
+    width: 100%;
   }
 }
 </style>

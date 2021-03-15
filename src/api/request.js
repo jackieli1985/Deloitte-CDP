@@ -4,13 +4,13 @@
  */
 import Vue from "vue";
 import axios from "axios";
-import store from "@/store";
 
 // create an axios instance
 // 创建axios 实例
 const RequestService = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API,
-  timeout: 30000, // 请求超时时间 10s
+  // baseURL: process.env.VUE_APP_BASE_API,
+  baseURL: "http://101.132.190.195:8100",
+  timeout: 30000, // 请求超时时间 30s
   withCredentials: false, // send cookies when cross-domain requests
   headers: {
     Accept: "application/json",
@@ -22,11 +22,6 @@ const RequestService = axios.create({
 RequestService.interceptors.request.use(
   config => {
     // do something before request is sent
-    // 设置token
-    if (store.getters.token) {
-      // please modify it according to the actual situation
-      config.headers["authorization"] = store.getters.token;
-    }
     // force IE not to cache
     if (config.method === "post") {
       let data = config.data || {};
@@ -115,15 +110,10 @@ RequestService.interceptors.response.use(
 
     // 服务器错误码统一提示
     Vue.prototype.$nextTick(() => {
-      const toast = Vue.prototype.$message.$create({
-        txt: err.message,
-        type: "txt",
-        time: 3000,
-        onTimeout: () => {
-          console.log("error toast");
-        }
+      Vue.prototype.$message({
+        message: err.message,
+        type: "error"
       });
-      toast.show();
     });
 
     let errorMsgObj = {

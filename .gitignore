@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
-/dist
+# heroku deploy filder
+# /dist
 
 
 # local env files

@@ -18,7 +18,7 @@
 <h5>Automated inspection alert and restoration自动检查警报和恢复</h5>
 <h5>User authority management 用户权限管理</h5>
 
-<br>
+
 # Deployment
 <a href="https://heroku.com/deploy?template=https://github.com/jackieli1985/Deloitte-CDP">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">

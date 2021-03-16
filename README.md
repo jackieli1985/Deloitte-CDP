@@ -9,37 +9,45 @@
 # Key Features
 
 ### Data Source Management
-- The only source of real customer data</h5>
-Integrate the mapping relationship for multi-channel customer IDs</p>
-- Flexible customer data access</h5>
-Connect multi-channel customer data sources</p>
-- Subject and object data mapping</h5>
-Data management for non-customer subjects and objects such as products, stores, and sales staff</p>
+- The only source of real customer data
+<p>Integrate the mapping relationship for multi-channel customer IDs</p>
+
+- Flexible customer data access
+<p>Connect multi-channel customer data sources</p>
+
+- Subject and object data mapping
+<p>Data management for non-customer subjects and objects such as products, stores, and sales staff</p>
 
 ### Customer Tag Management
-- Integrated management of customer master data, tags and behaviors</h5>
-<p>Extract user attributes and behavior data from various data sources according to priority, which allows to customize tag rules.</p>
-- Rich industry tags</h5>
-<p>Support customer tag, product tag, store tag and tag interconnection, and even allow to custom tag types for the industry, such as custom vehicle and dealer tags for the automotive industry.</p>
-- Flexible modeling form</h5>
-<p>Built-in multiple model algorithms, such as RFM user value segmentation model, AIPL brand recognition model, user interest model, custom formula model, etc.</p>
+- Integrated management of customer master data, tags and behaviors
+<p>Extract user attributes and behavior data from various data sources according to priority, which allows to customize tag rules.
+  
+- Rich industry tags
+<p>Support customer tag, product tag, store tag and tag interconnection, and even allow to custom tag types for the industry, such as custom vehicle and dealer tags for the automotive industry.
+  
+- Flexible modeling forms
+<p>Built-in multiple model algorithms, such as RFM user value segmentation model, AIPL brand recognition model, user interest model, custom formula model, etc.
 
 ### Analysis and Decision
-- 360 customer profile</h5>
+- 360 customer profile
 <p>Configurable display of customer attribute portraits, tag portraits and behavior portraits to understand customers in a comprehensive way.</p>
-- Behavior and tag analysis</h5>
+
+- Behavior and tag analysis
 <p>Conduct single-dimensional characteristic analysis, pivot analysis, and behavior indicator distribution analysis on the population to understand population characteristics.</p>
-- Dig deeper into business indicators</h5>
+
+- Dig deeper into business indicators
 <p>Use custom indicators and calculation methods to configure behavior indicators, which helps dig deeper into user behavior patterns.</p>
 
 ### Personalized Service
 - Smart marketing and personalized offering</h5>
 <p>Personalized offering based on the tag system and configuration rules</p>
+
 - Downstream data docking</h5>
 <p>The platform has a flexible and configurable data open interface, which can be connected to multiple channels for data exchange.</p>
 
 # Why Deloitte CDP?
 <p align="left"><img src="https://www.deloittedigital.de/content/dam/deloittedigital/assets/logo/deloitte@1,5x.svg"></a></p> 
+
 - Tags and Modeling</h5>
 <p>Flexible configuration, high-intensity model algorithm to create user tag system accurately in all directions
 

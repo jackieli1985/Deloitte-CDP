@@ -9,7 +9,7 @@ import axios from "axios";
 // 创建axios 实例
 const RequestService = axios.create({
   // baseURL: process.env.VUE_APP_BASE_API,
-  baseURL: "https://101.132.190.195:8100",
+  baseURL: "https://hapi.dcmasset.com:8100/saveConcat",
   timeout: 30000, // 请求超时时间 30s
   withCredentials: false, // send cookies when cross-domain requests
   headers: {
